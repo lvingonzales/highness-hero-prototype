@@ -11,6 +11,13 @@ main,
 
 #hero-container {
   border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+}
+
+.project-container {
+  flex: 1 1 0;
+  border: 1px solid green;
 }
 
 /*# sourceMappingURL=style.css.map */
