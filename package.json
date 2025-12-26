@@ -1,0 +1,21 @@
+{
+  "name": "prototype-project-template",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/lvingonzales/prototype-template#readme",
+  "bugs": {
+    "url": "https://github.com/lvingonzales/prototype-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvingonzales/prototype-template.git"
+  },
+  "license": "ISC",
+  "author": "Liam Gonzales",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss:watch": "sass --watch scss/style.scss style.scss"
+  }
+}
