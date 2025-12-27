@@ -1,6 +1,7 @@
 body {
-    width: 90vw;
+    width: 100vw;
     height: 80vh;
+    margin: 0px;
 }
 
 main,
@@ -10,13 +11,31 @@ main,
 }
 
 #hero-container {
-    border: 1px solid red;
+    // border: 1px solid red;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 
 .project-container {
     flex: 1 1 0;
-    border: 1px solid green;
+    transition: flex 1s ease-out;
+    background-color: green;
+    pointer-events: none;
+
+    &:nth-child(even) {
+        background-color: blue;
+    }
+
+    &.active {
+        cursor: pointer;
+        pointer-events: all;
+
+    }
+
+    &.focus {
+        flex: 5 1 0;
+    }
 }
+
 
