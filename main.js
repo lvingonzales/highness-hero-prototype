@@ -9,7 +9,10 @@ domTimer.innerHTML = currentProgress;
 let intervalCarousel;
 let intervalTimer;
 
-//
+// document.querySelectorAll(".artist-icon").addEventListener('mouseenter', () => {
+
+// })
+
 window.addEventListener("load", () => {
   domProjectContainers.forEach((container) => {
     containers.push(new Container(container));
@@ -41,6 +44,9 @@ function chooseTransform() {
 class Container {
   constructor(domElement) {
     this.container = domElement;
+    this.projectInfo = this.container.querySelector(
+      ".project-thumb-info-container"
+    );
     this.initialPosition = chooseTransform();
     this.currentPosition = this.initialPosition;
 
@@ -49,17 +55,24 @@ class Container {
     this.container.addEventListener("transitionend", () => {
       if (this.currentPosition == 0) {
         this.container.classList.add("active");
+
+        if (this.container.classList.contains("focus")) {
+          this.projectInfo.style.transition = "opacity 250ms linear";
+          this.projectInfo.style.opacity = 1;
+        }
       } else {
         this.container.classList.remove("active");
       }
     });
 
     this.container.addEventListener("mouseover", () => {
-        this.container.classList.add("focus");
+      this.container.classList.add("focus");
     });
 
     this.container.addEventListener("mouseleave", () => {
       this.container.classList.remove("focus");
+      this.projectInfo.style.transition = "";
+      this.projectInfo.style.opacity = 0;
     });
   }
 

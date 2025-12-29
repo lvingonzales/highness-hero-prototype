@@ -30,12 +30,14 @@ main,
   cursor: pointer;
   pointer-events: all;
 }
+.project-container.active .project-thumb-info-container {
+  pointer-events: none;
+}
 .project-container.focus {
   flex: 10 1 0;
 }
 .project-container.focus .project-thumb-info-container {
-  opacity: 1;
-  transition: opacity 0s linear;
+  pointer-events: all;
 }
 
 .project-thumb {
@@ -49,19 +51,32 @@ main,
   z-index: 100000;
   display: flex;
   justify-content: flex-end;
-  padding: 0.5rem 1rem 0.5rem 0px;
+  padding-top: 100px;
   gap: 1rem;
   bottom: 0;
   right: 0;
   opacity: 0;
-  transition: opacity 100ms 100ms linear;
+  width: 100%;
+  background: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0.738) 19%, rgba(0, 0, 0, 0.541) 34%, rgba(0, 0, 0, 0.382) 47%, rgba(0, 0, 0, 0.278) 56.5%, rgba(0, 0, 0, 0.194) 65%, rgba(0, 0, 0, 0.126) 73%, rgba(0, 0, 0, 0.075) 80.2%, rgba(0, 0, 0, 0.042) 86.1%, rgba(0, 0, 0, 0.021) 91%, rgba(0, 0, 0, 0.008) 95.2%, rgba(0, 0, 0, 0.002) 98.2%, transparent 100%);
+}
+.project-thumb-info-container:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: white;
 }
 
 .project-info {
   text-align: right;
+  color: white;
 }
-.project-info h3, .project-info p {
+.project-info h3,
+.project-info p {
   margin: 0px;
+}
+
+.project-info,
+.project-artist-icon {
+  margin: 0px 1rem 1rem 0px;
 }
 
 .project-artist-icon {
@@ -73,7 +88,7 @@ main,
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background-color: blue;
+  border: 2px solid white;
 }
 
 /*# sourceMappingURL=style.css.map */
